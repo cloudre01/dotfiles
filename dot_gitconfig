@@ -1,0 +1,28 @@
+[user]
+	name = cloudre01
+	email = alextan01@hotmail.com
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[init]
+	defaultBranch = main
+[difftool]
+	prompt = true
+[diff]
+	tool = nvimdiff 
+[difftool "nvimdiff"]
+	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = nvim 
+[mergetool]
+	keepBackup = false
+	trustExitCode = false
+	prompt = false 
+[mergetool "nvim"]
+	cmd = "nvim -c ':lua require(\"lazy\").load({plugins={\"diffview.nvim\"}})' -c 'DiffviewOpen'"
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
