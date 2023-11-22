@@ -1,0 +1,6 @@
+os:
+  edit: "nvim --server $NVIM --remote-send '<CMD>q<CR><CMD>lua vim.cmd(\"e \" .. {{filename}})<CR>'"
+  # edit: "nvim --server $NVIM --remote-tab {{filename}}"
+  # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
+  editAtLine: "nvim --server $NVIM --remote-send '<CMD>q<CR><CMD>lua vim.cmd(\"e \" .. {{filename}})<CR>{{line}}G'"
+promptToReturnFromSubprocess: false
